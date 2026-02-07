@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1° Aninho da Maria Alice 🦋</title>
+  <style>
+    :root{
+      --rosa1:#fde2f3;
+      --rosa2:#fbcfe8;
+      --rosa3:#f472b6;
+      --verde:#bbf7d0;
+      --amarelo:#fde68a;
+      --lilas:#e9d5ff;
+      --texto:#7c2d12;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Comic Sans MS','Trebuchet MS',Arial,sans-serif;
+      background: radial-gradient(circle at top, #fff 0%, var(--rosa1) 35%, var(--rosa2) 100%);
+      overflow-x:hidden;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* Borboletas coloridas */
+    .butterfly{
+      position:fixed;
+      font-size:30px;
+      animation:fly 14s linear infinite;
+      opacity:.9;
+    }
+    .b1{top:10%; left:-10%; color:#fb7185}
+    .b2{top:25%; left:-15%; color:#a78bfa; animation-delay:3s}
+    .b3{top:40%; left:-20%; color:#22d3ee; animation-delay:6s}
+    .b4{top:55%; left:-18%; color:#facc15; animation-delay:9s}
+    .b5{top:70%; left:-22%; color:#4ade80; animation-delay:12s}
+
+    @keyframes fly{
+      0%{transform:translate(0,0) rotate(0)}
+      50%{transform:translate(60vw,-30px) rotate(12deg)}
+      100%{transform:translate(120vw,20px) rotate(-8deg)}
+    }
+
+    /* Confetes jardim */
+    .confetti{position:fixed; inset:0; pointer-events:none}
+    .confetti i{
+      position:absolute; top:-10%; width:10px; height:10px; border-radius:50%;
+      animation:fall 7s linear infinite
+    }
+    @keyframes fall{to{transform:translateY(120vh)}}
+
+    .card{
+      background:#fff;
+      border-radius:36px;
+      padding:28px 22px 26px;
+      max-width:390px; width:100%;
+      box-shadow:0 30px 60px rgba(0,0,0,.18);
+      text-align:center; position:relative;
+      border:5px dotted var(--rosa3);
+    }
+
+    .badge{
+      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+      background:linear-gradient(135deg,#fb7185,#f472b6);
+      color:#fff; padding:8px 16px; border-radius:999px;
+      font-weight:bold; box-shadow:0 8px 18px rgba(0,0,0,.15)
+    }
+
+    .decor{font-size:48px; margin:10px 0}
+    .title{font-size:30px; color:#ec4899; margin:6px 0}
+    .subtitle{font-size:16px; color:#6b21a8; margin-bottom:14px}
+
+    .info{
+      background:linear-gradient(135deg,#fff7ed,var(--rosa1));
+      border-radius:22px; padding:14px 16px; text-align:left;
+      font-size:15px; margin:14px 0 16px; color:var(--texto)
+    }
+    .info p{margin:8px 0}
+
+    .actions{display:grid; gap:12px}
+    .btn{
+      padding:14px 16px; border-radius:22px; border:none;
+      font-size:16px; font-weight:800; cursor:pointer;
+      transition:transform .15s, box-shadow .15s
+    }
+    .btn:hover{transform:translateY(-2px); box-shadow:0 10px 18px rgba(0,0,0,.15)}
+    .yes{background:linear-gradient(135deg,#f472b6,#fb7185); color:#fff}
+    .map{background:linear-gradient(135deg,#fde68a,#fbbf24); color:#78350f}
+    .no{background:linear-gradient(135deg,#bbf7d0,#86efac); color:#14532d}
+
+    footer{margin-top:14px; font-size:13px; color:#7c2d12}
+
+    .heart{display:inline-block; animation:pulse 1.2s infinite}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  </style>
+</head>
+<body>
+
+  <!-- Borboletas coloridas -->
+  <div class="butterfly b1">🦋</div>
+  <div class="butterfly b2">🦋</div>
+  <div class="butterfly b3">🦋</div>
+  <div class="butterfly b4">🦋</div>
+  <div class="butterfly b5">🦋</div>
+
+  <!-- Confetes -->
+  <div class="confetti" aria-hidden="true">
+    <i style="left:5%; background:#fb7185"></i>
+    <i style="left:15%; background:#a78bfa; animation-delay:1s"></i>
+    <i style="left:25%; background:#22d3ee; animation-delay:2s"></i>
+    <i style="left:35%; background:#facc15; animation-delay:3s"></i>
+    <i style="left:45%; background:#4ade80; animation-delay:1.5s"></i>
+    <i style="left:55%; background:#fb7185; animation-delay:2.5s"></i>
+    <i style="left:65%; background:#a78bfa; animation-delay:.5s"></i>
+    <i style="left:75%; background:#22d3ee; animation-delay:3.5s"></i>
+    <i style="left:85%; background:#facc15; animation-delay:2s"></i>
+  </div>
+
+  <main class="card">
+    <div class="badge">🌸 Jardim das Borboletas 🌸</div>
+    <div class="decor">🎀🦋🎂</div>
+    <h1 class="title">1° Aninho da Maria Alice</h1>
+    <p class="subtitle">Nossa borboletinha vai celebrar seu primeiro voo!</p>
+
+    <section class="info">
+      <p>📅 <strong>Data:</strong> 28/02/2026</p>
+      <p>⏰ <strong>Horário:</strong> 18:30</p>
+      <p>📍 <strong>Local:</strong><br>Rua Luís Bernardo, nº 206<br>Bairro Conjunto Esperança</p>
+    </section>
+
+    <div class="actions">
+      <button class="btn yes" onclick="confirmar('Confirmo presença 🦋🎉')">🦋 Eu vou 🦋</button>
+      <button class="btn map" onclick="abrirMapa()">🌼 Ver no jardim (mapa)</button>
+      <button class="btn no" onclick="confirmar('Não poderei ir 😢')">🍃 Não vou conseguir</button>
+    </div>
+
+    <footer>
+      Confirme sua presença até 20/02/2026 <span class="heart">💖</span>
+    </footer>
+  </main>
+
+  <script>
+    function confirmar(resposta){
+      const telefone='5588993131200';
+      const mensagem=encodeURIComponent(`Olá! ${resposta} no aniversário de 1° aninho da Maria Alice 🦋🎂`);
+      window.location.href=`https://wa.me/${telefone}?text=${mensagem}`;
+    }
+    function abrirMapa(){
+      window.open('https://www.google.com/maps/search/?api=1&query=Rua+Lu%C3%ADs+Bernardo,+206,+Conjunto+Esperan%C3%A7a','_blank');
+    }
+  </script>
+</body>
+</html>
